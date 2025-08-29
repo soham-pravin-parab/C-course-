@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class student{
+    string name;
+    double* cgpaPtr;
+
+public:
+    student(string name, double cgpa){
+        this->name = name;
+        cgpaPtr = new double;
+        *cgpaPtr = cgpa;
+    }
+    student(const student &obj){
+        this->name = obj.name;
+        cgpaPtr = new double;
+        this->cgpaPtr = obj.cgpaPtr;
+    }
+    
+    void getinfo(){
+        cout << "name: " << name;
+        cout << ", cgpa: " << *cgpaPtr << endl;
+    }
+};
+
+int main()
+{
+    student s1("Soham parab", 9.8);
+    student s2(s1);
+
+    
+    s2.getinfo();
+    
+
+    return 0;
+}
