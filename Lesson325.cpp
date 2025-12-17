@@ -1,0 +1,20 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+void printDigits(int n){
+    int sum=0;
+    while(n !=0){
+        int digits=n%10;
+        sum+=digits;
+        
+        n=n/10;
+    }
+    cout<<sum<<endl;
+}
+int main()
+{
+    int n =3568;
+    cout<<(int)(log10(n)+1); 
+    return 0;
+}
